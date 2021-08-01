@@ -84,6 +84,9 @@ class CountryCodePicker extends StatefulWidget {
   /// with customized codes.
   final List<Map<String, String>> countryList;
 
+  /// Set to true if you want to hide country name
+  final bool hideCountryName;
+
   CountryCodePicker({
     this.onChanged,
     this.onInit,
@@ -118,6 +121,7 @@ class CountryCodePicker extends StatefulWidget {
     this.dialogBackgroundColor,
     this.closeIcon = const Icon(Icons.close),
     this.countryList = codes,
+    this.hideCountryName = false,
     Key? key,
   }) : super(key: key);
 
@@ -310,6 +314,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
                 hideSearch: widget.hideSearch,
                 closeIcon: widget.closeIcon,
                 flagDecoration: widget.flagDecoration,
+                hideCountryName: widget.hideCountryName,
               ),
             ),
           ),
@@ -348,6 +353,7 @@ class CountryCodePickerState extends State<CountryCodePicker> {
             barrierColor: widget.barrierColor,
             hideSearch: widget.hideSearch,
             closeIcon: widget.closeIcon,
+            hideCountryName: widget.hideCountryName,
           ),
         ),
       ).then((e) {
